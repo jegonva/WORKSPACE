@@ -6,6 +6,12 @@ export interface PricePoint {
   note?: string
 }
 
+export interface Source {
+  name: string
+  url: string
+  description: string
+}
+
 export interface Category {
   id: string
   name: string
@@ -13,6 +19,7 @@ export interface Category {
   color: string
   colorClass: string
   items: PricePoint[]
+  sources: Source[]
 }
 
 export interface TrendDataPoint {

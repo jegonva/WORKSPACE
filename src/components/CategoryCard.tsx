@@ -1,5 +1,6 @@
 import type { Category } from '../types'
 import PriceRangeChart from './PriceRangeChart'
+import SourcesDropdown from './SourcesDropdown'
 
 interface Props {
   category: Category
@@ -49,6 +50,8 @@ export default function CategoryCard({ category }: Props) {
           </tbody>
         </table>
       </div>
+
+      <SourcesDropdown sources={category.sources} colorClass={category.colorClass} />
     </div>
   )
 }

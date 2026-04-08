@@ -8,14 +8,14 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
-import { trendData } from '../data/priceData'
-import { categories } from '../data/priceData'
+import { trendData, categories } from '../data/priceData'
 
-const LINES = categories.map((cat) => ({
-  key: cat.id as 'ac' | 'pintura' | 'plomeria' | 'general',
-  name: `${cat.icon} ${cat.name}`,
-  color: cat.color,
-}))
+const LINES = [
+  { key: 'ac' as const, name: `${categories[0].icon} ${categories[0].name}`, color: categories[0].color },
+  { key: 'pintura' as const, name: `${categories[1].icon} ${categories[1].name}`, color: categories[1].color },
+  { key: 'plomeria' as const, name: `${categories[2].icon} ${categories[2].name}`, color: categories[2].color },
+  { key: 'general' as const, name: `${categories[3].icon} ${categories[3].name}`, color: categories[3].color },
+]
 
 function CustomTooltip({
   active,
